@@ -21,7 +21,7 @@ const experiences = [
     period: "Freelance",
     role: "Human Resources Consultant",
     company: "Independent",
-    detail: "Advised teams on recruitment workflows, documentation, onboarding, and practical HR process improvement."
+    detail: "Consultation on organizational development, recruitment workflows, personnel administration, legal compliance, onboarding, and practical HR process improvement."
   }
 ];
 
