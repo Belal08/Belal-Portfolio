@@ -286,7 +286,8 @@ h3 {
 }
 
 .button.ghost {
-  background: var(--surface);
+  background: rgb(255 255 255);
+    color: #000000;
 }
 
 .contact-button {
