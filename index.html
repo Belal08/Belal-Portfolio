@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles (1).css" />
 </head>
 <body>
   <canvas id="network-bg" aria-hidden="true"></canvas>
@@ -134,7 +134,12 @@
         <p class="eyebrow">Certifications</p>
         <h2>Certificates across HR, analytics, and AI.</h2>
       </div>
-      <div class="certifications-grid" data-reveal>
+      <div class="certifications-carousel" data-reveal>
+        <div class="certifications-controls" aria-label="Certificate carousel controls">
+          <button class="carousel-button" type="button" data-carousel-prev aria-label="Previous certificate">‹</button>
+          <button class="carousel-button" type="button" data-carousel-next aria-label="Next certificate">›</button>
+        </div>
+        <div class="certifications-grid" data-cert-track tabindex="0" aria-label="Certificates carousel">
         <button class="certificate-card certificate-card-featured" type="button" data-cert-full="assets/certificates/data-driven-hr-analytics.jpg" aria-label="Open Data-Driven HR certificate">
           <span class="certificate-frame">
             <img src="assets/certificates/data-driven-hr-analytics.jpg" alt="Data-Driven HR: AI-Powered People Analytics certificate" />
@@ -215,6 +220,7 @@
             <small>Official credential preview</small>
           </span>
         </button>
+        </div>
       </div>
     </section>
 
@@ -264,6 +270,6 @@
     <img src="" alt="" />
   </div>
 
-  <script src="script.js"></script>
+  <script src="script (1).js"></script>
 </body>
 </html>
