@@ -64,15 +64,24 @@ const filters = document.querySelectorAll(".filter");
 const themeToggle = document.querySelector(".theme-toggle");
 
 function renderTimeline() {
-  timeline.innerHTML = experiences.map((item) => `
-    <article class="timeline-item">
-      <div class="timeline-marker">${item.period}</div>
-      <div>
-        <h3>${item.role}</h3>
-        <small>${item.company}</small>
-        <p>${item.detail}</p>
-      </div>
-    </article>
+  const pages = [];
+  for (let index = 0; index < experiences.length; index += 2) {
+    pages.push(experiences.slice(index, index + 2));
+  }
+
+  timeline.innerHTML = pages.map((page) => `
+    <div class="timeline-page">
+      ${page.map((item) => `
+        <article class="timeline-item">
+          <div class="timeline-marker">${item.period}</div>
+          <div>
+            <h3>${item.role}</h3>
+            <small>${item.company}</small>
+            <p>${item.detail}</p>
+          </div>
+        </article>
+      `).join("")}
+    </div>
   `).join("");
 }
 
@@ -187,14 +196,14 @@ function setupCertificatePreview() {
   });
 }
 
-function setupCertificateCarousel() {
-  const track = document.querySelector("[data-cert-track]");
-  const prevButton = document.querySelector("[data-carousel-prev]");
-  const nextButton = document.querySelector("[data-carousel-next]");
+function setupCarousel(trackSelector, prevSelector, nextSelector, itemSelector) {
+  const track = document.querySelector(trackSelector);
+  const prevButton = document.querySelector(prevSelector);
+  const nextButton = document.querySelector(nextSelector);
   if (!track || !prevButton || !nextButton) return;
 
   function getStep() {
-    const firstCard = track.querySelector(".certificate-card");
+    const firstCard = track.querySelector(itemSelector);
     if (!firstCard) return track.clientWidth;
     const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 18;
     return firstCard.getBoundingClientRect().width + gap;
@@ -228,6 +237,14 @@ function setupCertificateCarousel() {
   track.addEventListener("scroll", updateButtons, { passive: true });
   window.addEventListener("resize", updateButtons);
   updateButtons();
+}
+
+function setupCertificateCarousel() {
+  setupCarousel("[data-cert-track]", "[data-carousel-prev]", "[data-carousel-next]", ".certificate-card");
+}
+
+function setupTimelineCarousel() {
+  setupCarousel("[data-timeline-track]", "[data-timeline-prev]", "[data-timeline-next]", ".timeline-page");
 }
 
 function setupCanvas() {
@@ -307,5 +324,6 @@ setupReveal();
 setupCounters();
 setupTheme();
 setupCertificatePreview();
+setupTimelineCarousel();
 setupCertificateCarousel();
 setupCanvas();
