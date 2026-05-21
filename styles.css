@@ -34,7 +34,7 @@ body.dark {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 104px;
+  scroll-padding-top: 50px;
 }
 
 body {
@@ -169,7 +169,7 @@ body.dark .sun-icon {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
   padding: 96px 0;
-  scroll-margin-top: 104px;
+  scroll-margin-top: 50px;
 }
 
 .hero {
