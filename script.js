@@ -141,11 +141,49 @@ function setupCounters() {
 
 function setupTheme() {
   const savedTheme = localStorage.getItem("belal-theme");
-  if (savedTheme === "dark") document.body.classList.add("dark");
+  if (savedTheme !== "light") document.body.classList.add("dark");
 
   themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     localStorage.setItem("belal-theme", document.body.classList.contains("dark") ? "dark" : "light");
+  });
+}
+
+function setupCertificatePreview() {
+  const lightbox = document.querySelector("#certificateLightbox");
+  if (!lightbox) return;
+
+  const previewImage = lightbox.querySelector("img");
+  const closeButton = lightbox.querySelector(".certificate-lightbox-close");
+  const certificateButtons = document.querySelectorAll("[data-cert-full]");
+
+  function openPreview(button) {
+    const image = button.dataset.certFull;
+    const title = button.querySelector("strong")?.textContent || "Certificate preview";
+    previewImage.src = image;
+    previewImage.alt = title;
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    closeButton.focus();
+  }
+
+  function closePreview() {
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  certificateButtons.forEach((button) => {
+    button.addEventListener("click", () => openPreview(button));
+  });
+
+  closeButton.addEventListener("click", closePreview);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) closePreview();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && lightbox.classList.contains("is-open")) closePreview();
   });
 }
 
@@ -225,4 +263,5 @@ setupFilters();
 setupReveal();
 setupCounters();
 setupTheme();
+setupCertificatePreview();
 setupCanvas();
