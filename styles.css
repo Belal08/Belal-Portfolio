@@ -255,7 +255,6 @@ h3 {
   justify-content: center;
   gap: 10px;
   border-radius: 16px;
-  padding: 0 18px;
   font-weight: 800;
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
 }
