@@ -253,6 +253,7 @@ h3 {
   min-height: 48px;
   align-items: center;
   justify-content: center;
+  padding: 10Px;
   gap: 10px;
   border-radius: 16px;
   font-weight: 800;
@@ -352,7 +353,8 @@ h3 {
 }
 
 .contact-button.gmail {
-  background: linear-gradient(135deg, #ea4335, #b3261e);
+  background: linear-gradient(135deg, #ffff, #ffff);
+  color: #17202a;
 }
 
 .stats-strip {
