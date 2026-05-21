@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Belal Abdelhamed - Human Resources Business Partner portfolio." />
+  <title>Belal Abdelhamed | HR Business Partner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="network-bg" aria-hidden="true"></canvas>
+
+  <header class="site-header" data-reveal>
+    <a class="brand" href="#home" aria-label="Belal Abdelhamed home">
+      <span class="brand-mark">BA</span>
+      <span>Belal Abdelhamed</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+      <span class="sun-icon" aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy" data-reveal>
+        <h1>Hey, I'm Belal.</h1>
+        <p class="hero-subtitle">Your strategic Human Resources Business Partner.</p>
+        <p class="hero-lead">
+          Senior HR professional from Alexandria, Egypt, improving people operations,
+          compliance, onboarding, recruitment, and organizational development across
+          high-growth teams.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">View my work</a>
+          <a class="button ghost" href="mailto:belalabdulhamed5@gmail.com">Email me</a>
+        </div>
+      </div>
+
+      <section class="stats-strip hero-stats" aria-label="Career highlights" data-reveal>
+        <article>
+          <span class="stat-number" data-count="5">0</span>
+          <p>Years of experience</p>
+        </article>
+        <article>
+          <span class="stat-number" data-count="150">0</span>
+          <p>Successful orientation & onboarding</p>
+        </article>
+        <article>
+          <span class="stat-number" data-count="200">0</span>
+          <p>Hiring requests fulfilled</p>
+        </article>
+        <article>
+          <span class="stat-number" data-count="6">0</span>
+          <p>Process Improvement Projects</p>
+        </article>
+      </section>
+    </section>
+
+    <section class="section split" id="about">
+      <div class="section-kicker" data-reveal>
+        <p class="eyebrow">About me</p>
+        <h2>People operations with an industrial-engineering brain.</h2>
+      </div>
+      <div class="content-card about-card" data-reveal>
+        <p>
+          As a Senior Human Resources Generalist at a leading food delivery app in
+          Saudi Arabia, I focus on improving HR operational efficiency and supporting
+          a diverse, high-performing workforce. I manage personnel operations while
+          ensuring full compliance with labor laws and social insurance regulations.
+        </p>
+        <p>
+          I bring hands-on HR experience across Tech, FMCG, Manufacturing, and Food &
+          Beverage, with direct involvement in organizational development, recruitment,
+          and process improvement initiatives.
+        </p>
+      </div>
+    </section>
+
+    <section class="section education-grid" aria-label="Education and certifications">
+      <article class="content-card education-card" data-reveal>
+        <span class="card-icon">01</span>
+        <h3>Bachelor of Science</h3>
+        <p>Production and Industrial Engineering, Faculty of Engineering, Alexandria University.</p>
+        <small>Graduated June 2019</small>
+      </article>
+      <article class="content-card education-card" data-reveal>
+        <span class="card-icon">02</span>
+        <h3>Yellow Belt Six Sigma</h3>
+        <p>Lean Production and Six Sigma certification from the Technical University of Munich.</p>
+        <small>April 2018</small>
+      </article>
+      <article class="content-card education-card" data-reveal>
+        <span class="card-icon">03</span>
+        <h3>Continuous Learning</h3>
+        <p>Certified learning across human resources, data analysis, and project management.</p>
+        <small>Ongoing</small>
+      </article>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Previous experiences</p>
+        <h2>Roles that shaped the work.</h2>
+      </div>
+      <div class="timeline" id="timeline" data-reveal></div>
+    </section>
+
+    <section class="section work-section" id="work">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Work focus</p>
+        <h2>What I can help teams improve.</h2>
+      </div>
+      <div class="filters" data-reveal>
+        <button class="filter active" type="button" data-filter="all">All</button>
+        <button class="filter" type="button" data-filter="operations">Operations</button>
+        <button class="filter" type="button" data-filter="talent">Talent</button>
+        <button class="filter" type="button" data-filter="development">Development</button>
+      </div>
+      <div class="work-grid" id="workGrid" data-reveal></div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-panel" data-reveal>
+        <p class="eyebrow">Get in contact</p>
+        <h2>Let's build cleaner, smarter HR operations.</h2>
+        <p>
+          For HR projects, recruitment support, onboarding systems, or process
+          improvement conversations, reach me through any channel below.
+        </p>
+        <div class="contact-actions">
+          <a class="button primary" href="https://www.linkedin.com/in/belal-abdelhamed" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="button whatsapp" href="https://wa.me/01098113440" target="_blank" rel="noreferrer">WhatsApp</a>
+          <a class="button ghost" href="mailto:belalabdulhamed5@gmail.com">Email</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Belal Abdelhamed</span>
+    <span>Human Resources Business Partner</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
