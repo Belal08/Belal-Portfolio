@@ -296,10 +296,12 @@ h3 {
 }
 
 .hero-stats {
-  width: 100%;
-  margin: 0;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-self: center;
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px; 
+  align-self: center;
 }
 
 .stats-strip article,
@@ -318,7 +320,11 @@ h3 {
 }
 
 .hero-stats article {
-  min-height: 176px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 180px; 
+  padding: 24px;
 }
 
 .hero-stats .stat-number {
