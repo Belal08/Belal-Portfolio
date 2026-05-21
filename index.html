@@ -112,7 +112,13 @@
         <p class="eyebrow">Previous experiences</p>
         <h2>Roles that shaped the work.</h2>
       </div>
-      <div class="timeline" id="timeline" data-reveal></div>
+      <div class="timeline-carousel" data-reveal>
+        <div class="timeline-controls" aria-label="Experience carousel controls">
+          <button class="carousel-button" type="button" data-timeline-prev aria-label="Previous experiences">‹</button>
+          <button class="carousel-button" type="button" data-timeline-next aria-label="Next experiences">›</button>
+        </div>
+        <div class="timeline" id="timeline" data-timeline-track tabindex="0" aria-label="Previous experiences carousel"></div>
+      </div>
     </section>
 
     <section class="section work-section" id="work">
