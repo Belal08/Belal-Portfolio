@@ -244,45 +244,52 @@ h3 {
 .hero-actions,
 .contact-actions {
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px; /* زيادة خفيفة في المسافات بين الأيقونات */
   margin-top: 28px;
 }
 
+/* ==========================================
+   التعديل الجديد: تحويل الأزرار إلى أيقونات دائرية
+   ========================================== */
 .button {
   display: inline-flex;
-  min-height: 48px;
+  width: 52px;  /* عرض ثابت للدائرة */
+  height: 52px; /* ارتفاع ثابت للدائرة */
   align-items: center;
   justify-content: center;
-  border-radius: 16px;
-  padding: 0 18px;
-  font-weight: 800;
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  border-radius: 50%; /* تحويل لـ دائرة كاملة */
+  padding: 0; /* إلغاء البادينج القديم الخاص بالنصوص */
+  font-size: 22px; /* حجم مناسب للأيقونات بالداخل */
+  border: none;
+  cursor: pointer;
+  transition: transform 220ms ease, box-shadow 220ms ease, opacity 220ms ease;
 }
 
 .button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px); /* زيادة التأثير الحركي قليلاً ليناسب الأيقونة */
 }
 
+/* أيقونة لينكد إن */
 .button.primary {
-  border-color: transparent;
-  background: linear-gradient(135deg, #1d3557, #11848b);
+  background: linear-gradient(135deg, #103753 0%, #166A7F 100%);
   color: #fff;
-  box-shadow: 0 18px 36px rgba(0, 119, 181, 0.24);
+  box-shadow: 0 10px 25px rgba(16, 55, 83, 0.3);
 }
 
+/* أيقونة واتساب */
 .button.whatsapp {
-  border-color: transparent;
-  background: linear-gradient(135deg, #075e54, #25d366) !important;
+  background: linear-gradient(135deg, #075E43 0%, #25D366 100%) !important;
   color: #fff;
-  box-shadow: 0 18px 36px rgba(37, 211, 102, 0.24);
+  box-shadow: 0 10px 25px rgba(7, 94, 67, 0.3);
 }
 
+/* أيقونة الإيميل باللون الـ Gradient الجديد المتناسق */
 .button.ghost {
-  border-color: transparent;
-  background: linear-gradient(135deg, #b71c1c, #4a0e17);
+  background: linear-gradient(135deg, #7A0A10 0%, #C62828 100%);
   color: #fff;
-  box-shadow: 0 18px 36px rgba(74, 14, 23, 0.4);
+  box-shadow: 0 10px 25px rgba(122, 10, 16, 0.35);
 }
+/* ========================================== */
 
 .stats-strip {
   display: grid;
