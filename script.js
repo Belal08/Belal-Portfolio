@@ -141,8 +141,8 @@ function setupCounters() {
 
 function setupTheme() {
   const savedTheme = localStorage.getItem("belal-theme");
-  if (savedTheme !== "light") document.body.classList.add("dark");
-
+  document.body.classList.add("dark");
+  
   themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     localStorage.setItem("belal-theme", document.body.classList.contains("dark") ? "dark" : "light");
