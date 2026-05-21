@@ -281,6 +281,7 @@ h3 {
 .button.ghost {
   background: linear-gradient(135deg, #b71c1c, #4a0e17);
   color: #ffffff;
+  box-shadow: 0 8px 20px rgba(183, 28, 28, 0.4);
 }
 
 .stats-strip {
