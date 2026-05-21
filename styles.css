@@ -279,7 +279,8 @@ h3 {
 }
 
 .button.ghost {
-  background: var(--surface);
+  background: linear-gradient(135deg, #b71c1c, #4a0e17);
+  color: #ffffff;
 }
 
 .stats-strip {
