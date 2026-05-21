@@ -79,7 +79,6 @@ a {
   align-items: center;
   gap: 18px;
   padding: 10px 12px 10px 18px;
-  border: 1px solid var(--line);
   border-radius: 24px;
   background: color-mix(in srgb, var(--surface) 92%, transparent);
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
