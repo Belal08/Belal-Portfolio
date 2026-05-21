@@ -291,15 +291,40 @@ h3 {
   display: grid;
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); 
   gap: 12px;
 }
 
 .hero-stats {
   width: 100%;
   margin: 0;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, 1fr); 
   align-self: center;
+}
+
+@media (max-width: 900px) {
+  /* ... أي كود تاني سيبه زي ما هو ... */
+
+  .stats-strip,
+  .hero-stats, 
+  .education-grid,
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+/* 3. عند شاشات الموبايل الصغيرة (max-width: 620px) */
+@media (max-width: 620px) {
+
+  .stats-strip,
+  .education-grid,
+  .work-grid {
+    grid-template-columns: 1fr; /* تحت بعض خالص على الموبايل عشان المساحة */
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr; 
+  }
 }
 
 .stats-strip article,
