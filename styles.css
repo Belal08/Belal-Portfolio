@@ -476,7 +476,7 @@ h3 {
   gap: 18px;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 4px 4px 34px;
+  padding: 4px;
   scroll-behavior: smooth;
   scroll-padding-inline: 4px;
   scroll-snap-type: x mandatory;
@@ -532,6 +532,17 @@ h3 {
 .timeline-marker {
   color: var(--gold);
   font-weight: 800;
+}
+
+.timeline,
+.certifications-carousel .certifications-grid {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.timeline::-webkit-scrollbar,
+.certifications-carousel .certifications-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .filters {
