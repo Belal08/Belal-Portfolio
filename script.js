@@ -149,12 +149,23 @@ function setupCounters() {
 }
 
 function setupTheme() {
-  const savedTheme = localStorage.getItem("belal-theme");
+  const savedTheme = (() => {
+    try {
+      return localStorage.getItem("belal-theme");
+    } catch {
+      return null;
+    }
+  })();
+
   if (savedTheme === "dark") document.body.classList.add("dark");
 
   themeToggle.addEventListener("click", () => {
-    if (savedTheme === "dark") document.body.classList.add("dark");
-    localStorage.setItem("belal-theme", document.body.classList.contains("dark") ? "dark" : "light");
+    document.body.classList.toggle("dark");
+    try {
+      localStorage.setItem("belal-theme", document.body.classList.contains("dark") ? "dark" : "light");
+    } catch {
+      // Keep the theme toggle working even if storage is blocked.
+    }
   });
 }
 
