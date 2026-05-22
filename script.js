@@ -153,7 +153,7 @@ function setupTheme() {
   if (savedTheme === "dark") document.body.classList.add("dark");
 
   themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
+    if (savedTheme === "dark") document.body.classList.add("dark");
     localStorage.setItem("belal-theme", document.body.classList.contains("dark") ? "dark" : "light");
   });
 }
