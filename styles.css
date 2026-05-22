@@ -946,21 +946,26 @@ footer {
   scroll-behavior: smooth;
   scroll-padding-inline: 4px;
   scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
-  scrollbar-color: color-mix(in srgb, var(--teal) 62%, transparent) transparent;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .certifications-carousel .certifications-grid::-webkit-scrollbar {
-  height: 8px;
+  width: 0;
+  height: 0;
+  display: none;
 }
 
-.certifications-carousel .certifications-grid::-webkit-scrollbar-track {
-  background: transparent;
+.certifications-carousel .certifications-grid::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
-.certifications-carousel .certifications-grid::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--teal) 58%, transparent);
+.certifications-carousel .certifications-grid::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 .certifications-carousel .certificate-card,
@@ -1073,12 +1078,12 @@ footer {
     margin: -8px 0 14px;
   }
 
-  .certifications-carousel .certifications-grid {
-    gap: 14px;
-    margin-inline: -8px;
-    padding-inline: 8px;
-    scroll-padding-inline: 8px;
-  }
+.certifications-carousel .certifications-grid {
+  gap: 14px;
+  margin-inline: -8px;
+  padding: 4px 8px;
+  scroll-padding-inline: 8px;
+}
 
   .certifications-carousel .certificate-card,
   .certifications-carousel .certificate-card-featured {
