@@ -942,7 +942,7 @@ footer {
   align-items: stretch;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 4px 4px 34px;
+  padding: 4px;
   scroll-behavior: smooth;
   scroll-padding-inline: 4px;
   scroll-snap-type: x mandatory;
@@ -1095,4 +1095,13 @@ footer {
     transition: none !important;
     animation: none !important;
   }
+
+  .certifications-carousel .certifications-grid {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.certifications-carousel .certifications-grid::-webkit-scrollbar {
+  display: none;
+}
 }
