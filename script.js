@@ -266,6 +266,7 @@ function setupTimelineCarousel() {
 
 function setupCanvas() {
   const canvas = document.querySelector("#network-bg");
+  if (!canvas) return;
   const ctx = canvas.getContext("2d");
   const particles = [];
   const particleCount = window.matchMedia("(max-width: 620px)").matches ? 28 : 58;
