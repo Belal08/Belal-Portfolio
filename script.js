@@ -57,7 +57,7 @@ const workItems = [
     text: "Using engineering thinking, Six Sigma foundations, and HR data habits to spot bottlenecks and improve execution."
   },
   {
-    category: "Automation",
+    category: "automation",
     title: "Process Automation",
     text: "Utilized JavaScript, HTML, and CSS to build custom automation tools and internal solutions that reduced process bottlenecks and improved workflow efficiency."
   }
