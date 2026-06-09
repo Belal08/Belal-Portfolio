@@ -55,11 +55,14 @@ const workItems = [
     category: "development",
     title: "Process Improvement",
     text: "Using engineering thinking, Six Sigma foundations, and HR data habits to spot bottlenecks and improve execution."
-  }
+  },
+  {
     category: "Automation",
     title: "Process Automation",
     text: "Utilized JavaScript, HTML, and CSS to build custom automation tools and internal solutions that reduced process bottlenecks and improved workflow efficiency."
+  }
 ];
+
 
 const timeline = document.querySelector("#timeline");
 const workGrid = document.querySelector("#workGrid");
