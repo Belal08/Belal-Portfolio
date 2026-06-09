@@ -3,7 +3,7 @@ const experiences = [
     period: "Jan 2026 - Present",
     role: "Senior Human Resources Generalist",
     company: "The Chefz",
-    detail: "Leading HR operations, compliance follow-up, onboarding, recruitment support, and process improvement across people operations."
+    detail: "Leading HR operations, compliance follow-up, onboarding, Payroll, recruitment support, and process improvement across people operations."
   },
   {
     period: "May 2022 - Dec 2025",
@@ -15,7 +15,7 @@ const experiences = [
     period: "May 2022 - Dec 2023",
     role: "Human Resources Generalist",
     company: "Holo Technology",
-    detail: "Supported HR operations in a tech environment with a focus on process discipline, employee experience, and daily people services."
+    detail: "Supported HR operations within a fast-paced tech environment, with a strong focus on process improvement, enhancing employee experience, payroll development, and managing daily employee operations."
   },
   {
     period: "Freelance",
@@ -56,6 +56,9 @@ const workItems = [
     title: "Process Improvement",
     text: "Using engineering thinking, Six Sigma foundations, and HR data habits to spot bottlenecks and improve execution."
   }
+    category: "Automation",
+    title: "Process Automation",
+    text: "Utilized JavaScript, HTML, and CSS to build custom automation tools and internal solutions that reduced process bottlenecks and improved workflow efficiency."
 ];
 
 const timeline = document.querySelector("#timeline");
