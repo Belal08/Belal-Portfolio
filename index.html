@@ -1,3 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Belal Abdelhamed - Human Resources Business Partner portfolio." />
+  <title>Belal Abdelhamed | HR Business Partner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=experience-carousel-2" />
+</head>
+<body>
+  <canvas id="network-bg" aria-hidden="true"></canvas>
+
+  <header class="site-header" data-reveal>
+    <a class="brand" href="#home" aria-label="Belal Abdelhamed home">
+      <span class="brand-mark">BA</span>
+      <span>Belal Abdelhamed</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+      <span class="sun-icon" aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy" data-reveal>
+        <h1>Hey, I'm Belal.</h1>
+       <p class="hero-subtitle">
+       <span id="dynamicText"></span><span class="typing-cursor">|</span>
+       </p>
+        <p class="hero-lead">
+          Senior HR professional from Alexandria, Egypt, improving people operations,
+          compliance, onboarding, recruitment, and organizational development across
+          high-growth teams.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">View my work</a>
+          <a class="button ghost" href="mailto:belalabdulhamed5@gmail.com">Email me</a>
+        </div>
+      </div>
+
+      <section class="stats-strip hero-stats" aria-label="Career highlights" data-reveal>
+        <article>
+          <span class="stat-number" data-count="5">0</span>
+          <p>Years of experience</p>
+        </article>
+        <article>
+          <span class="stat-number" data-count="250">0</span>
+          <p>Successful orientation & onboarding</p>
+        </article>
+        <article>
+          <span class="stat-number" data-count="500">0</span>
+          <p>Hiring requests fulfilled</p>
+        </article>
+        <article>
+          <span class="stat-number" data-count="6">0</span>
+          <p>Process Improvement Projects</p>
+        </article>
+      </section>
+    </section>
+
+    <section class="section split" id="about">
+      <div class="section-kicker" data-reveal>
+        <p class="eyebrow">About me</p>
+        <h2>People operations with an engineering brain.</h2>
+      </div>
+      <div class="content-card about-card" data-reveal>
+        <p>
+          As a Senior Human Resources Generalist at The Chefz, a leading food delivery app in
+          Saudi Arabia, I focus on improving HR operational efficiency and supporting
+          a diverse, high-performing workforce. I manage personnel operations while
+          ensuring full compliance with labor laws and social insurance regulations.
+        </p>
+        <p>
+          I bring hands-on HR experience across Tech, FMCG, Manufacturing, Shipping, and Food &
+          Beverage, with direct involvement in organizational development, recruitment,
+          and process improvement initiatives.
+        </p>
+      </div>
+    </section>
+
+    <section class="section education-grid" aria-label="Education and certifications">
+      <article class="content-card education-card" data-reveal>
+        <span class="card-icon">01</span>
+        <h3>Bachelor of Engineering</h3>
+        <p>Production and Industrial Engineering, Faculty of Engineering, Alexandria University.</p>
+        <small>Graduated June 2019</small>
+      </article>
+      <article class="content-card education-card" data-reveal>
+        <span class="card-icon">02</span>
+        <h3>Yellow Belt Six Sigma</h3>
+        <p>Lean Production and Six Sigma certification from the Technical University of Munich.</p>
+        <small>April 2018</small>
+      </article>
+      <article class="content-card education-card" data-reveal>
+        <span class="card-icon">03</span>
+        <h3>Continuous Learning</h3>
+        <p>Certified learning across human resources, data analysis, and project management.</p>
+        <small>Ongoing</small>
+      </article>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Previous experiences</p>
+        <h2>Roles that shaped the work.</h2>
+      </div>
+      <div class="timeline-carousel" data-reveal>
+        <div class="timeline-controls" aria-label="Experience carousel controls">
+          <button class="carousel-button" type="button" data-timeline-prev aria-label="Previous experiences">‹</button>
+          <button class="carousel-button" type="button" data-timeline-next aria-label="Next experiences">›</button>
+        </div>
+        <div class="timeline" id="timeline" data-timeline-track tabindex="0" aria-label="Previous experiences carousel"></div>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Work focus</p>
+        <h2>What I can help teams improve.</h2>
+      </div>
+      <div class="filters" data-reveal>
+        <button class="filter active" type="button" data-filter="all">All</button>
+        <button class="filter" type="button" data-filter="operations">Operations</button>
+        <button class="filter" type="button" data-filter="talent">Talent</button>
+        <button class="filter" type="button" data-filter="development">Development</button>
+        <button class="filter" type="button" data-filter="automation">Automation</button>
+      </div>
+      <div class="work-grid" id="workGrid" data-reveal></div>
+    </section>
+
+    <section class="section certifications-section" id="certifications">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Certifications</p>
+        <h2>Certificates across HR, analytics, and AI.</h2>
+      </div>
+      <div class="certifications-carousel" data-reveal>
+        <div class="certifications-controls" aria-label="Certificate carousel controls">
+          <button class="carousel-button" type="button" data-carousel-prev aria-label="Previous certificate">‹</button>
+          <button class="carousel-button" type="button" data-carousel-next aria-label="Next certificate">›</button>
+        </div>
         <div class="certifications-grid" data-cert-track tabindex="0" aria-label="Certificates carousel">
         <button class="certificate-card certificate-card-featured" type="button" data-cert-full="assets/certificates/data-driven-hr-analytics.jpg" aria-label="Open Data-Driven HR certificate">
           <span class="certificate-frame">
@@ -6,7 +156,7 @@
           <span class="certificate-copy">
             <span class="certificate-issuer">LinkedIn Learning</span>
             <strong>Data-Driven HR: AI-Powered People Analytics</strong>
-            <small>People Analytics &bull; AI for HR</small>
+            <small>People Analytics • AI for HR</small>
           </span>
         </button>
         <button class="certificate-card" type="button" data-cert-full="assets/certificates/phr-linkedin-learning.jpg" aria-label="Open PHR certificate">
@@ -26,7 +176,7 @@
           <span class="certificate-copy">
             <span class="certificate-issuer">Microsoft & LinkedIn</span>
             <strong>Career Essentials in Generative AI</strong>
-            <small>AI &bull; Generative AI</small>
+            <small>AI • Generative AI</small>
           </span>
         </button>
         <button class="certificate-card" type="button" data-cert-full="assets/certificates/ai-hr-practices.jpg" aria-label="Open AI for HR certificate">
@@ -36,7 +186,7 @@
           <span class="certificate-copy">
             <span class="certificate-issuer">LinkedIn Learning</span>
             <strong>Using AI to Improve HR Practices</strong>
-            <small>HR Transformation &bull; AI for HR</small>
+            <small>HR Transformation • AI for HR</small>
           </span>
         </button>
         <button class="certificate-card" type="button" data-cert-full="assets/certificates/employee-relations-hr.jpg" aria-label="Open Employee Relations certificate">
@@ -56,7 +206,7 @@
           <span class="certificate-copy">
             <span class="certificate-issuer">LinkedIn Learning</span>
             <strong>Human Resources: Using Metrics to Drive HR Strategy</strong>
-            <small>HR Strategy &bull; HR Metrics</small>
+            <small>HR Strategy • HR Metrics</small>
           </span>
         </button>
         <button class="certificate-card" type="button" data-cert-full="assets/certificates/edx-pdf-preview.png" aria-label="Open edX PDF credential preview">
@@ -125,54 +275,89 @@
   </footer>
 
   <div class="certificate-lightbox" id="certificateLightbox" aria-hidden="true">
-    <button class="certificate-lightbox-close" type="button" aria-label="Close certificate preview">&times;</button>
+    <button class="certificate-lightbox-close" type="button" aria-label="Close certificate preview">×</button>
     <img src="" alt="" />
   </div>
+const dynamicText = document.getElementById("dynamicText");
 
+const phrases = [
+  "Your strategic Human Resources Business Partner.",
+  "Turning people operations into measurable impact.",
+  "Building smarter HR processes for growing teams.",
+  "Connecting talent, compliance, and business goals.",
+  "Designing people-first systems with operational precision."
+];
+
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeLoop() {
+  const currentPhrase = phrases[phraseIndex];
+
+  dynamicText.textContent = isDeleting
+    ? currentPhrase.slice(0, charIndex--)
+    : currentPhrase.slice(0, charIndex++);
+
+  let speed = isDeleting ? 35 : 65;
+
+  if (!isDeleting && charIndex > currentPhrase.length) {
+    speed = 1400;
+    isDeleting = true;
+  }
+
+  if (isDeleting && charIndex < 0) {
+    isDeleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    speed = 300;
+  }
+
+  setTimeout(typeLoop, speed);
+}
+
+if (dynamicText) {
+  typeLoop();
+}
   <script src="script.js?v=experience-carousel-2"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const dynamicText = document.getElementById("dynamicText");
-
-      const phrases = [
-        "Your strategic Human Resources Business Partner.",
-        "People operations, built with precision.",
-        "HR strategy powered by data and process improvement.",
-        "Building better employee experience from day one.",
-        "Where HR operations meet business impact."
-      ];
-
-      if (!dynamicText) return;
-
-      let phraseIndex = 0;
-      let charIndex = 0;
-      let isDeleting = false;
-
-      function typeLoop() {
-        const currentPhrase = phrases[phraseIndex];
-
-        dynamicText.textContent = isDeleting
-          ? currentPhrase.slice(0, charIndex--)
-          : currentPhrase.slice(0, charIndex++);
-
-        let speed = isDeleting ? 35 : 65;
-
-        if (!isDeleting && charIndex > currentPhrase.length) {
-          speed = 1400;
-          isDeleting = true;
-        }
-
-        if (isDeleting && charIndex < 0) {
-          isDeleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-          speed = 300;
-        }
-
-        setTimeout(typeLoop, speed);
-      }
-
-      typeLoop();
-    });
-  </script>
 </body>
+  <script src="script.js?v=experience-carousel-2"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dynamicText = document.getElementById("dynamicText");
+
+    const phrases = [
+      "Your strategic Human Resources Business Partner.",
+      "People operations, built with precision.",
+      "HR strategy powered by data and process improvement.",
+      "Building better employee experience from day one.",
+      "Where HR operations meet business impact."
+    ];
+
+    if (!dynamicText) return;
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+
+    function typeLoop() {
+      const currentPhrase = phrases[phraseIndex];
+
+      dynamicText.textContent = currentPhrase.slice(0, charIndex);
+      charIndex++;
+
+      if (charIndex <= currentPhrase.length) {
+        setTimeout(typeLoop, 75);
+      } else {
+        setTimeout(() => {
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          charIndex = 0;
+          dynamicText.textContent = "";
+          typeLoop();
+        }, 2000);
+      }
+    }
+
+    typeLoop();
+  });
+</script>
 </html>
