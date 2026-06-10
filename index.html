@@ -338,33 +338,23 @@ if (dynamicText) {
 
     let phraseIndex = 0;
     let charIndex = 0;
-    let isDeleting = false;
 
     function typeLoop() {
       const currentPhrase = phrases[phraseIndex];
 
       dynamicText.textContent = currentPhrase.slice(0, charIndex);
+      charIndex++;
 
-      if (isDeleting) {
-        charIndex--;
+      if (charIndex <= currentPhrase.length) {
+        setTimeout(typeLoop, 65);
       } else {
-        charIndex++;
+        setTimeout(() => {
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          charIndex = 0;
+          dynamicText.textContent = "";
+          typeLoop();
+        }, 1400);
       }
-
-      let speed = isDeleting ? 35 : 65;
-
-      if (!isDeleting && charIndex > currentPhrase.length) {
-        speed = 1400;
-        isDeleting = true;
-      }
-
-      if (isDeleting && charIndex < 0) {
-        isDeleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-        speed = 300;
-      }
-
-      setTimeout(typeLoop, speed);
     }
 
     typeLoop();
