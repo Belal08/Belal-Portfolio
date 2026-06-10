@@ -278,7 +278,46 @@
     <button class="certificate-lightbox-close" type="button" aria-label="Close certificate preview">×</button>
     <img src="" alt="" />
   </div>
+const dynamicText = document.getElementById("dynamicText");
 
+const phrases = [
+  "Your strategic Human Resources Business Partner.",
+  "Turning people operations into measurable impact.",
+  "Building smarter HR processes for growing teams.",
+  "Connecting talent, compliance, and business goals.",
+  "Designing people-first systems with operational precision."
+];
+
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeLoop() {
+  const currentPhrase = phrases[phraseIndex];
+
+  dynamicText.textContent = isDeleting
+    ? currentPhrase.slice(0, charIndex--)
+    : currentPhrase.slice(0, charIndex++);
+
+  let speed = isDeleting ? 35 : 65;
+
+  if (!isDeleting && charIndex > currentPhrase.length) {
+    speed = 1400;
+    isDeleting = true;
+  }
+
+  if (isDeleting && charIndex < 0) {
+    isDeleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    speed = 300;
+  }
+
+  setTimeout(typeLoop, speed);
+}
+
+if (dynamicText) {
+  typeLoop();
+}
   <script src="script.js?v=experience-carousel-2"></script>
 </body>
 </html>
