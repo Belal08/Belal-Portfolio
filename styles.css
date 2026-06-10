@@ -1122,3 +1122,14 @@ footer {
   height: 0 !important;
   display: none !important;
 }
+.typing-cursor {
+  display: inline-block;
+  margin-left: 3px;
+  color: var(--accent, #f25b24);
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 45% { opacity: 1; }
+  46%, 100% { opacity: 0; }
+}
