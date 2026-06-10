@@ -320,4 +320,54 @@ if (dynamicText) {
 }
   <script src="script.js?v=experience-carousel-2"></script>
 </body>
+  <script src="script.js?v=experience-carousel-2"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dynamicText = document.getElementById("dynamicText");
+
+    const phrases = [
+      "Your strategic Human Resources Business Partner.",
+      "People operations, built with precision.",
+      "HR strategy powered by data and process improvement.",
+      "Building better employee experiences from day one.",
+      "Where HR operations meet business impact."
+    ];
+
+    if (!dynamicText) return;
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeLoop() {
+      const currentPhrase = phrases[phraseIndex];
+
+      dynamicText.textContent = currentPhrase.slice(0, charIndex);
+
+      if (isDeleting) {
+        charIndex--;
+      } else {
+        charIndex++;
+      }
+
+      let speed = isDeleting ? 35 : 65;
+
+      if (!isDeleting && charIndex > currentPhrase.length) {
+        speed = 1400;
+        isDeleting = true;
+      }
+
+      if (isDeleting && charIndex < 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        speed = 300;
+      }
+
+      setTimeout(typeLoop, speed);
+    }
+
+    typeLoop();
+  });
+</script>
 </html>
