@@ -1237,4 +1237,11 @@ footer {
   50% {
     transform: translateY(-8px);
   }
+  #loading-percent {
+  color: var(--gold);
+  font-weight: 700;
+  margin-left: 4px;
+  min-width: 40px;
+  display: inline-block;
+}
 }
