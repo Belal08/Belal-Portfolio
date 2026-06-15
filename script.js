@@ -334,39 +334,31 @@ function setupCanvas() {
     createParticles();
   });
 }
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
+
   const preloader = document.getElementById("preloader");
-
-  setTimeout(() => {
-    preloader.classList.add("hide");
-
-    setTimeout(() => {
-      preloader.remove();
-    }, 800);
-
-  }, 2200);
   const percent = document.getElementById("loading-percent");
 
-let progress = 0;
+  let progress = 0;
 
-const counter = setInterval(() => {
-  progress++;
+  const counter = setInterval(() => {
 
-  percent.textContent = progress + "%";
+    progress++;
+    percent.textContent = progress + "%";
 
-  if (progress >= 100) {
-    clearInterval(counter);
+    if (progress >= 100) {
 
-    setTimeout(() => {
+      clearInterval(counter);
+
       preloader.classList.add("hide");
 
       setTimeout(() => {
         preloader.remove();
       }, 800);
 
-    }, 300);
-  }
-}, 20);
+    }
+
+  }, 30);
 });
 
 renderTimeline();
