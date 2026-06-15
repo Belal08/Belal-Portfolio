@@ -345,6 +345,28 @@ window.addEventListener("load", () => {
     }, 800);
 
   }, 2200);
+  const percent = document.getElementById("loading-percent");
+
+let progress = 0;
+
+const counter = setInterval(() => {
+  progress++;
+
+  percent.textContent = progress + "%";
+
+  if (progress >= 100) {
+    clearInterval(counter);
+
+    setTimeout(() => {
+      preloader.classList.add("hide");
+
+      setTimeout(() => {
+        preloader.remove();
+      }, 800);
+
+    }, 300);
+  }
+}, 20);
 });
 
 renderTimeline();
