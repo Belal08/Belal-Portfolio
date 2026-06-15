@@ -1133,3 +1133,108 @@ footer {
   0%, 45% { opacity: 1; }
   46%, 100% { opacity: 0; }
 }
+/* ===== PRELOADER ===== */
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(15,118,110,.15), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(216,97,76,.15), transparent 30%),
+    var(--bg);
+
+  transition: opacity .8s ease, visibility .8s ease;
+}
+
+#preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-content {
+  text-align: center;
+  width: min(420px, 90%);
+}
+
+.preloader-logo {
+  width: 90px;
+  height: 90px;
+
+  margin: 0 auto 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 24px;
+
+  background: linear-gradient(
+    135deg,
+    var(--navy),
+    var(--teal)
+  );
+
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+
+  box-shadow: 0 20px 50px rgba(18,53,91,.25);
+
+  animation: floatLogo 2s ease-in-out infinite;
+}
+
+.preloader-name {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.loading-bar {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255,255,255,.15);
+}
+
+.loading-progress {
+  height: 100%;
+  width: 0;
+
+  background: linear-gradient(
+    90deg,
+    var(--gold),
+    var(--teal)
+  );
+
+  animation: loading 2s ease forwards;
+}
+
+.loading-text {
+  margin-top: 14px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  font-size: .9rem;
+}
+
+@keyframes loading {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes floatLogo {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
