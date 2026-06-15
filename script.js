@@ -334,6 +334,18 @@ function setupCanvas() {
     createParticles();
   });
 }
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+
+  setTimeout(() => {
+    preloader.classList.add("hide");
+
+    setTimeout(() => {
+      preloader.remove();
+    }, 800);
+
+  }, 2200);
+});
 
 renderTimeline();
 renderWork();
