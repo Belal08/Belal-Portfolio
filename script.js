@@ -334,7 +334,6 @@ function setupCanvas() {
     createParticles();
   });
 }
-window.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById("preloader");
@@ -361,15 +360,15 @@ window.addEventListener("DOMContentLoaded", () => {
       }, 1100);
     }
   }, 30);
-});
 
-renderTimeline();
-renderWork();
-setupFilters();
-setupReveal();
-setupCounters();
-setupTheme();
-setupCertificatePreview();
-setupTimelineCarousel();
-setupCertificateCarousel();
-setupCanvas();
+  renderTimeline();
+  renderWork();
+  setupFilters();
+  setupReveal();
+  setupCounters();
+  setupTheme();
+  setupCertificatePreview();
+  setupTimelineCarousel();
+  setupCertificateCarousel();
+  setupCanvas();
+});
