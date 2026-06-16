@@ -136,7 +136,7 @@ function setupCounters() {
 
       const element = entry.target;
       const target = Number(element.dataset.count);
-      const duration = 1200;
+      const duration = 2300;
       const start = performance.now();
 
       function tick(now) {
