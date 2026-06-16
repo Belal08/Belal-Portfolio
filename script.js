@@ -376,35 +376,40 @@ window.addEventListener("DOMContentLoaded", () => {
   const loadingProgress = document.querySelector(".loading-progress");
   const loadingPercent = document.getElementById("loading-percent");
 
-  let progress = 0;
-
-  const counter = setInterval(() => {
-    progress += 1;
-
-    loadingProgress.style.width = `${progress}%`;
-    loadingPercent.textContent = `${progress}%`;
-
-    if (progress >= 100) {
-      clearInterval(counter);
-
-      setTimeout(() => {
-        preloader.classList.add("hide");
-      }, 250);
-
-      setTimeout(() => {
-        preloader.remove();
-      }, 1100);
-    }
-  }, 30);
-
   renderTimeline();
   renderWork();
   setupFilters();
   setupReveal();
-  setupCounters();
   setupTheme();
   setupCertificatePreview();
   setupTimelineCarousel();
   setupCertificateCarousel();
   setupCanvas();
+  setupDynamicText();
+
+  if (preloader && loadingProgress && loadingPercent) {
+    let progress = 0;
+
+    const counter = setInterval(() => {
+      progress += 1;
+
+      loadingProgress.style.width = `${progress}%`;
+      loadingPercent.textContent = `${progress}%`;
+
+      if (progress >= 100) {
+        clearInterval(counter);
+
+        setTimeout(() => {
+          preloader.classList.add("hide");
+          setupCounters();
+        }, 250);
+
+        setTimeout(() => {
+          preloader.remove();
+        }, 1100);
+      }
+    }, 30);
+  } else {
+    setupCounters();
+  }
 });
