@@ -1216,7 +1216,6 @@ footer {
   width: 0;
   border-radius: inherit;
   background: linear-gradient(90deg, var(--teal), var(--gold), var(--coral));
-  animation: loading 2s cubic-bezier(.65, 0, .35, 1) forwards;
 }
 
 .loading-text {
