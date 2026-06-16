@@ -1180,7 +1180,7 @@ footer {
   border-radius: 28px;
   padding: 3px;
   background: conic-gradient(var(--teal), var(--gold), var(--coral), var(--teal));
-  animation: spinLoader 1.2s linear infinite;
+  animation: spinLoader 2.4s linear infinite;
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
 }
