@@ -336,28 +336,30 @@ function setupCanvas() {
 }
 window.addEventListener("DOMContentLoaded", () => {
 
+window.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById("preloader");
-  const percent = document.getElementById("loading-percent");
+  const loadingProgress = document.querySelector(".loading-progress");
+  const loadingPercent = document.getElementById("loading-percent");
 
   let progress = 0;
 
   const counter = setInterval(() => {
+    progress += 1;
 
-    progress++;
-    percent.textContent = progress + "%";
+    loadingProgress.style.width = `${progress}%`;
+    loadingPercent.textContent = `${progress}%`;
 
     if (progress >= 100) {
-
       clearInterval(counter);
 
-      preloader.classList.add("hide");
+      setTimeout(() => {
+        preloader.classList.add("hide");
+      }, 250);
 
       setTimeout(() => {
         preloader.remove();
-      }, 800);
-
+      }, 1100);
     }
-
   }, 30);
 });
 
