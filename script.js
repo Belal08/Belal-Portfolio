@@ -335,6 +335,42 @@ function setupCanvas() {
   });
 }
 
+function setupDynamicText() {
+  const dynamicText = document.getElementById("dynamicText");
+  if (!dynamicText) return;
+
+  const phrases = [
+    "Your strategic Human Resources Business Partner.",
+    "People operations, built with precision.",
+    "HR strategy powered by data and process improvement.",
+    "Building better employee experience from day one.",
+    "Where HR operations meet business impact."
+  ];
+
+  let phraseIndex = 0;
+  let charIndex = 0;
+
+  function typeLoop() {
+    const currentPhrase = phrases[phraseIndex];
+
+    dynamicText.textContent = currentPhrase.slice(0, charIndex);
+    charIndex += 1;
+
+    if (charIndex <= currentPhrase.length) {
+      setTimeout(typeLoop, 75);
+    } else {
+      setTimeout(() => {
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        charIndex = 0;
+        dynamicText.textContent = "";
+        typeLoop();
+      }, 2000);
+    }
+  }
+
+  typeLoop();
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById("preloader");
   const loadingProgress = document.querySelector(".loading-progress");
