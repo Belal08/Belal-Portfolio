@@ -123,11 +123,11 @@ a {
 }
 
 .nav-links a {
-  padding: 10px 12px;
+  padding: 10px 16px;
   border-radius: 999px;
   color: var(--muted);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
 }
 
 .nav-links a:hover {
