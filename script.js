@@ -408,7 +408,7 @@ window.addEventListener("DOMContentLoaded", () => {
           preloader.remove();
         }, 1100);
       }
-    }, 25);
+    }, 15);
   } else {
     setupCounters();
   }
