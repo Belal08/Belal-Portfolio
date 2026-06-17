@@ -290,6 +290,10 @@ h3 {
   color: #ffffff;
   box-shadow: 0 16px 0 rgba(92, 31, 31, 0.18), 0 26px 42px rgba(92, 31, 31, 0.22);
 }
+.button.ghost:hover,
+.button.ghost:focus-visible {
+  box-shadow: 0 10px 0 rgba(92, 31, 31, 0.18), 0 24px 40px rgba(92, 31, 31, 0.24);
+}
 
 .contact-button {
   min-width: 146px;
