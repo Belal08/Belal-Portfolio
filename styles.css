@@ -288,11 +288,27 @@ h3 {
 .button.ghost {
   background: rgb(92 31 31);
   color: #ffffff;
+  overflow: hidden;
   box-shadow: 0 16px 0 rgba(92, 31, 31, 0.18), 0 26px 42px rgba(92, 31, 31, 0.22);
 }
+
+.button.ghost::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent 48%);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
 .button.ghost:hover,
 .button.ghost:focus-visible {
   box-shadow: 0 10px 0 rgba(92, 31, 31, 0.18), 0 24px 40px rgba(92, 31, 31, 0.24);
+}
+
+.button.ghost:hover::after,
+.button.ghost:focus-visible::after {
+  opacity: 1;
 }
 
 .contact-button {
