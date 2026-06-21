@@ -1279,32 +1279,92 @@ footer {
   overflow: hidden;
 }
 
-.sand-bg {
+.meteors-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.50;
-  background-image:
-    radial-gradient(circle, rgba(194, 146, 4, 0.55) 1.4px, transparent 2px),
-    radial-gradient(circle, rgba(15, 118, 110, 0.35) 1.2px, transparent 2px),
-    radial-gradient(circle, rgba(216, 97, 76, 0.38) 1.3px, transparent 2px);
-  background-size: 70px 95px, 110px 145px, 150px 190px;
-  background-position: 0 -100px, 40px -140px, 80px -180px;
-  animation: sandFall 15s linear infinite;
+  overflow: hidden;
+}
+
+.meteors-bg span {
+  position: absolute;
+  top: -80px;
+  left: var(--x);
+  width: var(--w);
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(194, 146, 4, 0.65), transparent);
+  box-shadow: 0 0 18px rgba(194, 146, 4, 0.35);
+  opacity: 0;
+  transform: rotate(115deg);
+  animation: meteorFall var(--speed) linear infinite;
+  animation-delay: var(--delay);
+}
+
+.meteors-bg span:nth-child(1) {
+  --x: 12%;
+  --w: 120px;
+  --speed: 5.8s;
+  --delay: 0s;
+}
+
+.meteors-bg span:nth-child(2) {
+  --x: 34%;
+  --w: 90px;
+  --speed: 7.2s;
+  --delay: 1.1s;
+}
+
+.meteors-bg span:nth-child(3) {
+  --x: 58%;
+  --w: 140px;
+  --speed: 6.4s;
+  --delay: 2.4s;
+}
+
+.meteors-bg span:nth-child(4) {
+  --x: 76%;
+  --w: 105px;
+  --speed: 8s;
+  --delay: 0.7s;
+}
+
+.meteors-bg span:nth-child(5) {
+  --x: 88%;
+  --w: 80px;
+  --speed: 6.8s;
+  --delay: 3.2s;
+}
+
+.meteors-bg span:nth-child(6) {
+  --x: 22%;
+  --w: 115px;
+  --speed: 7.6s;
+  --delay: 4s;
+}
+
+@keyframes meteorFall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(115deg);
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  32% {
+    opacity: 0.85;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(-420px, 720px, 0) rotate(115deg);
+  }
 }
 
 .preloader-content {
   position: relative;
   z-index: 2;
-}
-
-@keyframes sandFall {
-  from {
-    background-position: 0 -120px, 40px -160px, 80px -200px;
-  }
-
-  to {
-    background-position: 0 120px, 40px 160px, 80px 200px;
-  }
 }
