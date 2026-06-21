@@ -1291,7 +1291,7 @@ footer {
     radial-gradient(circle, rgba(216, 97, 76, 0.38) 1.3px, transparent 2px);
   background-size: 70px 95px, 110px 145px, 150px 190px;
   background-position: 0 -100px, 40px -140px, 80px -180px;
-  animation: sandFall 6s linear infinite;
+  animation: sandFall 15s linear infinite;
 }
 
 .preloader-content {
