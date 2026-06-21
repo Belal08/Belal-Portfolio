@@ -1304,12 +1304,12 @@ footer {
   animation-delay: var(--delay);
 }
 
-.meteors-bg span:nth-child(1) { --x: 15%; --w: 170px; --speed: 7s; --delay: 0s; }
-.meteors-bg span:nth-child(2) { --x: 35%; --w: 130px; --speed: 5s; --delay: 0s; }
-.meteors-bg span:nth-child(3) { --x: 58%; --w: 190px; --speed: 6s; --delay: 0s; }
-.meteors-bg span:nth-child(4) { --x: 78%; --w: 145px; --speed: 3s; --delay: 0s; }
-.meteors-bg span:nth-child(5) { --x: 92%; --w: 120px; --speed: 5s; --delay: 0s; }
-.meteors-bg span:nth-child(6) { --x: 25%; --w: 155px; --speed: 4s; --delay: 0s; }
+.meteors-bg span:nth-child(1) { --x: 15%; --w: 170px; --speed: 8s; --delay: 0s; }
+.meteors-bg span:nth-child(2) { --x: 35%; --w: 130px; --speed: 7s; --delay: 0s; }
+.meteors-bg span:nth-child(3) { --x: 58%; --w: 190px; --speed: 7s; --delay: 0s; }
+.meteors-bg span:nth-child(4) { --x: 78%; --w: 145px; --speed: 6s; --delay: 0s; }
+.meteors-bg span:nth-child(5) { --x: 92%; --w: 120px; --speed: 7s; --delay: 0s; }
+.meteors-bg span:nth-child(6) { --x: 25%; --w: 155px; --speed: 8s; --delay: 0s; }
 
 @keyframes meteorFall {
   0% {
