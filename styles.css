@@ -1275,3 +1275,44 @@ footer {
     width: 100%;
   }
 }
+#preloader {
+  overflow: hidden;
+}
+
+#preloader::before,
+#preloader::after {
+  content: "";
+  position: absolute;
+  inset: -120px 0 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(194, 146, 4, 0.34) 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(15, 118, 110, 0.18) 1px, transparent 2px),
+    radial-gradient(circle, rgba(216, 97, 76, 0.22) 1px, transparent 1.7px);
+  background-size: 90px 120px, 130px 170px, 170px 210px;
+  background-position: 0 0, 35px 20px, 70px 60px;
+  opacity: 0.55;
+  animation: fallingSand 9s linear infinite;
+}
+
+#preloader::after {
+  opacity: 0.50;
+  filter: blur(0.4px);
+  animation-duration: 14s;
+  animation-delay: -4s;
+}
+
+.preloader-content {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fallingSand {
+  from {
+    transform: translate3d(0, -120px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 120px, 0);
+  }
+}
