@@ -1275,92 +1275,59 @@ footer {
     width: 100%;
   }
 }
+
 #preloader {
   overflow: hidden;
+  isolation: isolate;
 }
 
 .meteors-bg {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
   overflow: hidden;
 }
 
 .meteors-bg span {
   position: absolute;
-  top: -80px;
+  top: -140px;
   left: var(--x);
   width: var(--w);
-  height: 2px;
+  height: 3px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(194, 146, 4, 0.65), transparent);
-  box-shadow: 0 0 18px rgba(194, 146, 4, 0.35);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.95), rgba(194,146,4,.8));
+  box-shadow: 0 0 22px rgba(194,146,4,.55);
   opacity: 0;
-  transform: rotate(115deg);
+  transform: rotate(125deg);
   animation: meteorFall var(--speed) linear infinite;
   animation-delay: var(--delay);
 }
 
-.meteors-bg span:nth-child(1) {
-  --x: 12%;
-  --w: 120px;
-  --speed: 5.8s;
-  --delay: 0s;
-}
-
-.meteors-bg span:nth-child(2) {
-  --x: 34%;
-  --w: 90px;
-  --speed: 7.2s;
-  --delay: 1.1s;
-}
-
-.meteors-bg span:nth-child(3) {
-  --x: 58%;
-  --w: 140px;
-  --speed: 6.4s;
-  --delay: 2.4s;
-}
-
-.meteors-bg span:nth-child(4) {
-  --x: 76%;
-  --w: 105px;
-  --speed: 8s;
-  --delay: 0.7s;
-}
-
-.meteors-bg span:nth-child(5) {
-  --x: 88%;
-  --w: 80px;
-  --speed: 6.8s;
-  --delay: 3.2s;
-}
-
-.meteors-bg span:nth-child(6) {
-  --x: 22%;
-  --w: 115px;
-  --speed: 7.6s;
-  --delay: 4s;
-}
+.meteors-bg span:nth-child(1) { --x: 15%; --w: 170px; --speed: 7s; --delay: 0s; }
+.meteors-bg span:nth-child(2) { --x: 35%; --w: 130px; --speed: 9s; --delay: 1.4s; }
+.meteors-bg span:nth-child(3) { --x: 58%; --w: 190px; --speed: 8s; --delay: 2.6s; }
+.meteors-bg span:nth-child(4) { --x: 78%; --w: 145px; --speed: 10s; --delay: .8s; }
+.meteors-bg span:nth-child(5) { --x: 92%; --w: 120px; --speed: 8.5s; --delay: 3.5s; }
+.meteors-bg span:nth-child(6) { --x: 25%; --w: 155px; --speed: 9.5s; --delay: 4.4s; }
 
 @keyframes meteorFall {
   0% {
     opacity: 0;
-    transform: translate3d(0, 0, 0) rotate(115deg);
+    transform: translate3d(0, 0, 0) rotate(125deg);
   }
 
-  8% {
+  10% {
     opacity: 1;
   }
 
-  32% {
-    opacity: 0.85;
+  35% {
+    opacity: .9;
   }
 
   100% {
     opacity: 0;
-    transform: translate3d(-420px, 720px, 0) rotate(115deg);
+    transform: translate3d(-520px, 760px, 0) rotate(125deg);
   }
 }
 
