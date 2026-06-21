@@ -1284,7 +1284,7 @@ footer {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.75;
+  opacity: 0.50;
   background-image:
     radial-gradient(circle, rgba(194, 146, 4, 0.55) 1.4px, transparent 2px),
     radial-gradient(circle, rgba(15, 118, 110, 0.35) 1.2px, transparent 2px),
