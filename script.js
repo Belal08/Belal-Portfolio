@@ -461,7 +461,7 @@ function setupDynamicText() {
 window.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById("preloader");
   const loadingPercent = document.getElementById("loading-percent");
-  const signatureWordmark = document.querySelector(".signature-wordmark");
+  const monogramGlass = document.querySelector(".monogram-glass");
   const currentYear = document.getElementById("currentYear");
 
   if (currentYear) currentYear.textContent = new Date().getFullYear();
@@ -496,10 +496,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
       if (loadingPercent) loadingPercent.textContent = `${percent}%`;
       preloader.style.setProperty("--load-percent", `${percent}%`);
-      if (signatureWordmark) {
-        signatureWordmark.style.setProperty("--signature-blur", `${(18 * (1 - linearProgress)).toFixed(2)}px`);
-        signatureWordmark.style.setProperty("--signature-opacity", (0.12 + linearProgress * 0.88).toFixed(3));
-        signatureWordmark.style.setProperty("--signature-scale", (0.94 + linearProgress * 0.06).toFixed(3));
+      if (monogramGlass) {
+        monogramGlass.style.setProperty("--monogram-blur", `${(10 * (1 - linearProgress)).toFixed(2)}px`);
+        monogramGlass.style.setProperty("--monogram-opacity", (0.3 + linearProgress * 0.7).toFixed(3));
+        monogramGlass.style.setProperty("--monogram-scale", (0.9 + linearProgress * 0.1).toFixed(3));
+        monogramGlass.style.setProperty("--fill-level", `${percent}%`);
       }
 
       if (linearProgress < 1) {

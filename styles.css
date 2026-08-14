@@ -2420,6 +2420,39 @@ footer {
   }
 }
 
+/* Ultra-clear liquid glass loader */
+#preloader {
+  background:
+    radial-gradient(circle at 50% 46%,color-mix(in srgb,var(--teal) 7%,transparent),transparent 25rem),
+    color-mix(in srgb,var(--bg) 48%,transparent);
+  -webkit-backdrop-filter: blur(20px) saturate(145%);
+  backdrop-filter: blur(20px) saturate(145%);
+}
+
+.monogram-glass {
+  border-color: rgba(255,255,255,.38);
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.018) 62%,rgba(15,118,110,.035));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.58),
+    inset 0 -1px 0 rgba(62,84,101,.08),
+    0 22px 54px rgba(18,53,91,.12);
+  -webkit-backdrop-filter: blur(18px) saturate(190%);
+  backdrop-filter: blur(18px) saturate(190%);
+}
+
+.monogram-glass::before {
+  inset: -42% 38% 48% -24%;
+  background: rgba(255,255,255,.2);
+  filter: blur(18px);
+}
+
+body.dark .monogram-glass {
+  border-color: rgba(255,255,255,.16);
+  background: linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.012) 65%,rgba(69,213,198,.025));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 24px 58px rgba(0,0,0,.2);
+}
+
 /* Progressive signature loader */
 #preloader {
   --load-percent: 0%;
@@ -2512,4 +2545,190 @@ footer {
 
 @media (prefers-reduced-motion:reduce) {
   .signature-wordmark { opacity:1; filter:none; transform:none; }
+}
+
+/* Professional split signature mark */
+.signature-wordmark {
+  position: relative;
+  display: grid;
+  min-width: min(510px,88vw);
+  grid-template-columns: auto auto;
+  align-items: end;
+  justify-content: center;
+  column-gap: 15px;
+  padding: 4px 20px 24px;
+  font-family: Inter,Arial,sans-serif;
+  white-space: normal;
+}
+
+.signature-first {
+  color: var(--text);
+  font-family: Italianno,"Segoe Script",cursive;
+  font-size: clamp(5.2rem,10vw,8.4rem);
+  font-weight: 400;
+  line-height: .68;
+  letter-spacing: -.025em;
+}
+
+.signature-last {
+  margin-bottom: 7px;
+  color: var(--text);
+  font-size: clamp(.76rem,1.45vw,1.05rem);
+  font-weight: 700;
+  letter-spacing: .3em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.signature-stroke {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  width: 78%;
+  height: 34px;
+  overflow: visible;
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  opacity: .72;
+}
+
+.signature-stroke path {
+  stroke-dasharray: 520;
+  stroke-dashoffset: var(--stroke-offset,520px);
+}
+
+@media (max-width:620px) {
+  .signature-wordmark {
+    min-width: min(350px,92vw);
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 9px;
+    padding-bottom: 22px;
+  }
+
+  .signature-first { font-size: clamp(5rem,25vw,7rem); }
+  .signature-last { margin:0; font-size:.68rem; letter-spacing:.28em; }
+  .signature-stroke { right:10%; width:80%; }
+}
+
+/* BA glass monogram loader */
+.signature-loader {
+  min-width: min(420px,calc(100vw - 36px));
+  gap: 13px;
+}
+
+.monogram-glass {
+  --monogram-blur: 10px;
+  --monogram-opacity: .3;
+  --monogram-scale: .9;
+  --fill-level: 0%;
+  position: relative;
+  display: grid;
+  width: 132px;
+  height: 132px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.62);
+  border-radius: 37px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.68),rgba(255,255,255,.2)),
+    color-mix(in srgb,var(--surface) 40%,transparent);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.88),
+    inset 0 -1px 0 rgba(75,94,108,.1),
+    0 24px 60px rgba(18,53,91,.22);
+  opacity: var(--monogram-opacity);
+  filter: blur(var(--monogram-blur));
+  transform: scale(var(--monogram-scale));
+  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  backdrop-filter: blur(26px) saturate(180%);
+  will-change: filter,opacity,transform;
+}
+
+.monogram-glass::before {
+  content: "";
+  position: absolute;
+  inset: -35% 32% 42% -20%;
+  border-radius: 50%;
+  background: rgba(255,255,255,.48);
+  filter: blur(16px);
+  transform: rotate(-28deg);
+  pointer-events: none;
+}
+
+body.dark .monogram-glass {
+  border-color: rgba(255,255,255,.2);
+  background: linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.025)),rgba(19,30,43,.62);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2),0 26px 64px rgba(0,0,0,.3);
+}
+
+.monogram-letters {
+  position: relative;
+  color: transparent;
+  font-size: 3.25rem;
+  font-weight: 800;
+  letter-spacing: -.09em;
+  line-height: 1;
+  -webkit-text-stroke: 1.25px color-mix(in srgb,var(--navy) 72%,var(--text));
+}
+
+.monogram-letters::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  background: linear-gradient(145deg,var(--navy),var(--teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 0;
+  clip-path: inset(calc(100% - var(--fill-level)) 0 0 0);
+  text-shadow: 0 8px 22px color-mix(in srgb,var(--teal) 26%,transparent);
+}
+
+#preloader.is-complete .monogram-glass {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9),0 28px 70px color-mix(in srgb,var(--teal) 20%,transparent);
+}
+
+#preloader.is-leaving .monogram-glass {
+  transform: translateY(-8px) scale(.82);
+  transition: transform 620ms cubic-bezier(.22,1,.36,1);
+}
+
+@media (max-width:620px) {
+  .monogram-glass { width:116px; height:116px; border-radius:33px; }
+  .monogram-letters { font-size:2.85rem; }
+}
+
+/* Ultra-clear liquid glass loader */
+#preloader {
+  background:
+    radial-gradient(circle at 50% 46%,color-mix(in srgb,var(--teal) 7%,transparent),transparent 25rem),
+    color-mix(in srgb,var(--bg) 48%,transparent);
+  -webkit-backdrop-filter: blur(20px) saturate(145%);
+  backdrop-filter: blur(20px) saturate(145%);
+}
+
+.monogram-glass {
+  border-color: rgba(255,255,255,.38);
+  background: linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.018) 62%,rgba(15,118,110,.035));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.58),
+    inset 0 -1px 0 rgba(62,84,101,.08),
+    0 22px 54px rgba(18,53,91,.12);
+  -webkit-backdrop-filter: blur(18px) saturate(190%);
+  backdrop-filter: blur(18px) saturate(190%);
+}
+
+.monogram-glass::before {
+  inset: -42% 38% 48% -24%;
+  background: rgba(255,255,255,.2);
+  filter: blur(18px);
+}
+
+body.dark .monogram-glass {
+  border-color: rgba(255,255,255,.16);
+  background: linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.012) 65%,rgba(69,213,198,.025));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 24px 58px rgba(0,0,0,.2);
 }
