@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#e7f5f3"/></linearGradient></defs>
+  <rect width="800" height="500" rx="30" fill="url(#b)"/>
+  <rect x="32" y="32" width="736" height="436" rx="22" fill="none" stroke="#0f766e" stroke-width="3"/>
+  <text x="400" y="205" text-anchor="middle" font-family="Arial,sans-serif" font-size="88" font-weight="700" fill="#12355b">edX</text>
+  <text x="400" y="285" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#0f766e">Data Analysis</text>
+  <text x="400" y="335" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#667085">Credential preview</text>
+</svg>
