@@ -403,6 +403,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById("preloader");
   const loadingProgress = document.querySelector(".loading-progress");
   const loadingPercent = document.getElementById("loading-percent");
+  const currentYear = document.getElementById("currentYear");
+
+  if (currentYear) currentYear.textContent = new Date().getFullYear();
 
   renderTimeline();
   renderWork();
