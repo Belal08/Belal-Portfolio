@@ -3,7 +3,7 @@ const experiences = [
     period: "Jan 2026 - Present",
     role: "Senior Human Resources Generalist",
     company: "The Chefz",
-    detail: "Leading HR operations, compliance follow-up, onboarding, Payroll, recruitment support, and process improvement across people operations."
+    detail: "Leading HR operations, compliance, onboarding, payroll, recruitment support, and process-improvement initiatives across the employee lifecycle."
   },
   {
     period: "May 2022 - Dec 2025",
@@ -15,13 +15,13 @@ const experiences = [
     period: "May 2022 - Dec 2023",
     role: "Human Resources Generalist",
     company: "Holo Technology",
-    detail: "Supported HR operations within a fast-paced tech environment, with a strong focus on process improvement, enhancing employee experience, payroll development, and managing daily employee operations."
+    detail: "Supported HR operations in a fast-paced technology environment, focusing on process improvement, employee experience, payroll development, and day-to-day employee services."
   },
   {
     period: "Freelance",
     role: "Human Resources Consultant",
     company: "Independent",
-    detail: "Consultation on organizational development, recruitment workflows, personnel administration, legal compliance, onboarding, and practical HR process improvement."
+    detail: "Advising organizations on development, recruitment workflows, personnel administration, legal compliance, onboarding, and practical HR process improvement."
   }
 ];
 
@@ -70,6 +70,36 @@ const filters = document.querySelectorAll(".filter");
 const themeToggle = document.querySelector(".theme-toggle");
 const siteHeader = document.querySelector(".site-header");
 const navigationLinks = [...document.querySelectorAll(".nav-links a")];
+const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+
+function setupMobileMenu() {
+  if (!siteHeader || !mobileMenuToggle) return;
+
+  const closeMenu = () => {
+    siteHeader.classList.remove("menu-open");
+    mobileMenuToggle.setAttribute("aria-expanded", "false");
+  };
+
+  mobileMenuToggle.addEventListener("click", () => {
+    const opening = !siteHeader.classList.contains("menu-open");
+    siteHeader.classList.toggle("menu-open", opening);
+    mobileMenuToggle.setAttribute("aria-expanded", String(opening));
+  });
+
+  navigationLinks.forEach((link) => link.addEventListener("click", closeMenu));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!siteHeader.contains(event.target)) closeMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) closeMenu();
+  });
+}
 
 function setupLiquidNavigation() {
   if (!siteHeader) return;
@@ -368,10 +398,10 @@ function setupDynamicText() {
   if (!dynamicText) return;
 
   const phrases = [
-    "Your strategic Human Resources Business Partner.",
+    "Your strategic human resources business partner.",
     "People operations, built with precision.",
     "HR strategy powered by data and process improvement.",
-    "Building better employee experience from day one.",
+    "Building a better employee experience from day one.",
     "Where HR operations meet business impact."
   ];
 
@@ -413,6 +443,7 @@ window.addEventListener("DOMContentLoaded", () => {
   setupReveal();
   setupTheme();
   setupLiquidNavigation();
+  setupMobileMenu();
   setupCertificatePreview();
   setupTimelineCarousel();
   setupCertificateCarousel();

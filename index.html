@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=home-footer-6" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css?v=clear-glass-orb-8" />
 </head>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4S5L7WEL0T"></script>
@@ -53,7 +54,11 @@
   <canvas id="network-bg" aria-hidden="true"></canvas>
 
   <header class="site-header" data-reveal>
-    <nav class="nav-links" aria-label="Main navigation">
+    <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mainNavigation">
+      <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Menu</span>
+    </button>
+    <nav class="nav-links" id="mainNavigation" aria-label="Main navigation">
       <a href="#home" aria-label="Home">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9M9 20v-7h6v7"/></svg>
         <span>Home</span>
@@ -92,9 +97,9 @@
        <span id="dynamicText"></span><span class="typing-cursor">|</span>
        </p>
         <p class="hero-lead">
-          Senior HR professional from Alexandria, Egypt, specializing in people operations, 
-          compensation & benefits, payroll management, compliance, onboarding, recruitment,
-          and organizational development across high-growth organizations.
+          Senior HR professional based in Alexandria, Egypt, specializing in people operations,
+          compensation and benefits, payroll, compliance, onboarding, talent acquisition,
+          and organizational development within high-growth organizations.
         </p>
         <div class="hero-actions">
         <a class="button contact-button linkedin" href="https://www.linkedin.com/in/belal-abdelhamed" target="_blank" rel="noreferrer" aria-label="Connect on LinkedIn">
@@ -109,14 +114,18 @@
         </div>
       </div>
 
-      <section class="stats-strip hero-stats" aria-label="Career highlights" data-reveal>
+      <div class="hero-side" data-reveal>
+        <figure class="portrait-glass">
+          <img src="assets/images/belal-portrait.png" width="466" height="492" alt="Belal Abdelhamed" fetchpriority="high" />
+        </figure>
+      <section class="stats-strip hero-stats" aria-label="Career highlights">
         <article>
           <span class="stat-number" data-count="5">0</span>
           <p>Years of experience</p>
         </article>
         <article>
           <span class="stat-number" data-count="250">0</span>
-          <p>Successful orientation & onboarding</p>
+          <p>Successful orientation and onboarding programs</p>
         </article>
         <article>
           <span class="stat-number" data-count="500">0</span>
@@ -124,9 +133,10 @@
         </article>
         <article>
           <span class="stat-number" data-count="6">0</span>
-          <p>Process Improvement Projects</p>
+          <p>Process improvement projects</p>
         </article>
       </section>
+      </div>
     </section>
 
     <section class="section split" id="about">
@@ -136,15 +146,16 @@
       </div>
       <div class="content-card about-card" data-reveal>
         <p>
-      As a Senior Human Resources Generalist at The Chefz, a leading food delivery platform in Saudi Arabia, 
-      I lead key HR functions including people operations, compensation & benefits, payroll management, compliance,
-      recruitment, onboarding, and organizational development. I focus on enhancing operational efficiency, improving employee experience,
-      while ensuring compliance with labor laws, payroll tax regulations, social insurance requirements, and compensation & benefits policies.
+          As a Senior Human Resources Generalist at The Chefz, a leading food-delivery platform in Saudi Arabia,
+          I lead key HR functions, including people operations, compensation and benefits, payroll, compliance,
+          recruitment, onboarding, and organizational development. My focus is on improving operational efficiency
+          and the employee experience while maintaining compliance with labor laws, payroll tax regulations,
+          social insurance requirements, and internal policies.
         </p>
         <p>
-          I bring hands-on HR experience across Tech, FMCG, Manufacturing, Shipping, and Food &
-          Beverage, with direct involvement in organizational development, Talent Acquisition, HR Operations,
-          Compensation & Benefits, and process development initiatives.
+          I bring hands-on HR experience across technology, FMCG, manufacturing, shipping, and food and beverage,
+          with direct involvement in organizational development, talent acquisition, HR operations,
+          compensation and benefits, and process-improvement initiatives.
         </p>
       </div>
     </section>
@@ -172,8 +183,8 @@
 
     <section class="section" id="experience">
       <div class="section-heading" data-reveal>
-        <p class="eyebrow">Previous experiences</p>
-        <h2>Roles that shaped the work.</h2>
+        <p class="eyebrow">Professional experience</p>
+        <h2>Roles that shaped my approach.</h2>
       </div>
       <div class="timeline-carousel" data-reveal>
         <div class="timeline-controls" aria-label="Experience carousel controls">
@@ -210,9 +221,9 @@
           <button class="carousel-button" type="button" data-carousel-next aria-label="Next certificate">›</button>
         </div>
         <div class="certifications-grid" data-cert-track tabindex="0" aria-label="Certificates carousel">
-        <button class="certificate-card certificate-card-featured" type="button" data-cert-full="assets/certificates/data-driven-hr-analytics.jpg" aria-label="Open Data-Driven HR certificate">
+        <button class="certificate-card certificate-card-featured" type="button" data-cert-full="assets/certificates/data-driven-hr-analytics.webp" aria-label="Open Data-Driven HR certificate">
           <span class="certificate-frame">
-            <img src="assets/certificates/data-driven-hr-analytics.jpg" alt="Data-Driven HR: AI-Powered People Analytics certificate" />
+            <img src="assets/certificates/data-driven-hr-analytics.webp" alt="Data-Driven HR: AI-Powered People Analytics certificate" loading="lazy" decoding="async" />
           </span>
           <span class="certificate-copy">
             <span class="certificate-issuer">LinkedIn Learning</span>
@@ -220,9 +231,9 @@
             <small>People Analytics • AI for HR</small>
           </span>
         </button>
-        <button class="certificate-card" type="button" data-cert-full="assets/certificates/phr-linkedin-learning.jpg" aria-label="Open PHR certificate">
+        <button class="certificate-card" type="button" data-cert-full="assets/certificates/phr-linkedin-learning.webp" aria-label="Open PHR certificate">
           <span class="certificate-frame">
-            <img src="assets/certificates/phr-linkedin-learning.jpg" alt="Certification Prep: Professional in Human Resources certificate" />
+            <img src="assets/certificates/phr-linkedin-learning.webp" alt="Certification Prep: Professional in Human Resources certificate" loading="lazy" decoding="async" />
           </span>
           <span class="certificate-copy">
             <span class="certificate-issuer">LinkedIn Learning</span>
@@ -230,9 +241,9 @@
             <small>Human Resources</small>
           </span>
         </button>
-        <button class="certificate-card" type="button" data-cert-full="assets/certificates/generative-ai-microsoft-linkedin.jpg" aria-label="Open Generative AI certificate">
+        <button class="certificate-card" type="button" data-cert-full="assets/certificates/generative-ai-microsoft-linkedin.webp" aria-label="Open Generative AI certificate">
           <span class="certificate-frame">
-            <img src="assets/certificates/generative-ai-microsoft-linkedin.jpg" alt="Career Essentials in Generative AI certificate" />
+            <img src="assets/certificates/generative-ai-microsoft-linkedin.webp" alt="Career Essentials in Generative AI certificate" loading="lazy" decoding="async" />
           </span>
           <span class="certificate-copy">
             <span class="certificate-issuer">Microsoft & LinkedIn</span>
@@ -240,9 +251,9 @@
             <small>AI • Generative AI</small>
           </span>
         </button>
-        <button class="certificate-card" type="button" data-cert-full="assets/certificates/ai-hr-practices.jpg" aria-label="Open AI for HR certificate">
+        <button class="certificate-card" type="button" data-cert-full="assets/certificates/ai-hr-practices.webp" aria-label="Open AI for HR certificate">
           <span class="certificate-frame">
-            <img src="assets/certificates/ai-hr-practices.jpg" alt="Using AI to Improve Human Resources Practices certificate" />
+            <img src="assets/certificates/ai-hr-practices.webp" alt="Using AI to Improve Human Resources Practices certificate" loading="lazy" decoding="async" />
           </span>
           <span class="certificate-copy">
             <span class="certificate-issuer">LinkedIn Learning</span>
@@ -250,9 +261,9 @@
             <small>HR Transformation • AI for HR</small>
           </span>
         </button>
-        <button class="certificate-card" type="button" data-cert-full="assets/certificates/employee-relations-hr.jpg" aria-label="Open Employee Relations certificate">
+        <button class="certificate-card" type="button" data-cert-full="assets/certificates/employee-relations-hr.webp" aria-label="Open Employee Relations certificate">
           <span class="certificate-frame">
-            <img src="assets/certificates/employee-relations-hr.jpg" alt="Navigating Employee Relations as an HR Professional certificate" />
+            <img src="assets/certificates/employee-relations-hr.webp" alt="Navigating Employee Relations as an HR Professional certificate" loading="lazy" decoding="async" />
           </span>
           <span class="certificate-copy">
             <span class="certificate-issuer">LinkedIn Learning</span>
@@ -260,9 +271,9 @@
             <small>Employee Relations</small>
           </span>
         </button>
-        <button class="certificate-card" type="button" data-cert-full="assets/certificates/hr-metrics-strategy.jpg" aria-label="Open HR Metrics certificate">
+        <button class="certificate-card" type="button" data-cert-full="assets/certificates/hr-metrics-strategy.webp" aria-label="Open HR Metrics certificate">
           <span class="certificate-frame">
-            <img src="assets/certificates/hr-metrics-strategy.jpg" alt="Human Resources: Using Metrics to Drive HR Strategy certificate" />
+            <img src="assets/certificates/hr-metrics-strategy.webp" alt="Human Resources: Using Metrics to Drive HR Strategy certificate" loading="lazy" decoding="async" />
           </span>
           <span class="certificate-copy">
             <span class="certificate-issuer">LinkedIn Learning</span>
@@ -270,9 +281,9 @@
             <small>HR Strategy • HR Metrics</small>
           </span>
         </button>
-        <button class="certificate-card" type="button" data-cert-full="assets/certificates/edx-pdf-preview.png" aria-label="Open edX PDF credential preview">
+        <button class="certificate-card" type="button" data-cert-full="assets/certificates/edx-data-analysis.svg" aria-label="Open edX credential preview">
           <span class="certificate-frame">
-            <img src="assets/certificates/edx-pdf-preview.png" alt="edX credential PDF preview" />
+            <img src="assets/certificates/edx-data-analysis.svg" alt="edX Data Analysis credential preview" loading="lazy" decoding="async" />
           </span>
           <span class="certificate-copy">
             <span class="certificate-issuer">edX</span>
@@ -280,9 +291,9 @@
             <small>Udacity-MCIT</small>
           </span>
         </button>
-        <button class="certificate-card" type="button" data-cert-full="assets/certificates/Yello Belt Six Sigma.png" aria-label="Open edX online credential preview">
+        <button class="certificate-card" type="button" data-cert-full="assets/certificates/yellow-belt-six-sigma.webp" aria-label="Open Yellow Belt Six Sigma credential">
           <span class="certificate-frame">
-            <img src="assets/certificates/Yello Belt Six Sigma.png" alt="edX online verified credential preview" />
+            <img src="assets/certificates/yellow-belt-six-sigma.webp" alt="Yellow Belt Six Sigma credential" loading="lazy" decoding="async" />
           </span>
           <span class="certificate-copy">
             <span class="certificate-issuer">edX Credential</span>
@@ -296,7 +307,7 @@
 
     <section class="section contact-section" id="contact">
       <div class="contact-panel" data-reveal>
-        <p class="eyebrow">Get in contact</p>
+        <p class="eyebrow">Get in touch</p>
         <h2>Let’s create smarter HR experiences that drive real business impact.</h2>
         <p>
           For HR projects, talent acquisition, onboarding systems, workflow automation, or process optimization, feel free to reach out through any of the channels below.
@@ -338,5 +349,5 @@
     <button class="certificate-lightbox-close" type="button" aria-label="Close certificate preview">×</button>
     <img src="" alt="" />
   </div>
-<script src="script.js?v=home-footer-6"></script></body>
+<script src="script.js?v=clear-glass-orb-8"></script></body>
 </html>
