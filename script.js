@@ -71,6 +71,25 @@ const themeToggle = document.querySelector(".theme-toggle");
 const siteHeader = document.querySelector(".site-header");
 const navigationLinks = [...document.querySelectorAll(".nav-links a")];
 const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+const scrollTopButton = document.querySelector(".scroll-top");
+
+function setupScrollTop() {
+  if (!scrollTopButton) return;
+
+  const updateScrollTop = () => {
+    const fadeDistance = Math.max(window.innerHeight * 1.15, 720);
+    const progress = Math.min(Math.max(window.scrollY / fadeDistance, 0), 1);
+    scrollTopButton.style.setProperty("--scroll-progress", progress.toFixed(3));
+    scrollTopButton.classList.toggle("is-visible", progress > 0.035);
+  };
+
+  scrollTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  updateScrollTop();
+  window.addEventListener("scroll", updateScrollTop, { passive: true });
+}
 
 function setupMobileMenu() {
   if (!siteHeader || !mobileMenuToggle) return;
@@ -444,6 +463,7 @@ window.addEventListener("DOMContentLoaded", () => {
   setupTheme();
   setupLiquidNavigation();
   setupMobileMenu();
+  setupScrollTop();
   setupCertificatePreview();
   setupTimelineCarousel();
   setupCertificateCarousel();
