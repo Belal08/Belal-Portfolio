@@ -68,6 +68,47 @@ const timeline = document.querySelector("#timeline");
 const workGrid = document.querySelector("#workGrid");
 const filters = document.querySelectorAll(".filter");
 const themeToggle = document.querySelector(".theme-toggle");
+const siteHeader = document.querySelector(".site-header");
+const navigationLinks = [...document.querySelectorAll(".nav-links a")];
+
+function setupLiquidNavigation() {
+  if (!siteHeader) return;
+
+  siteHeader.addEventListener("pointermove", (event) => {
+    const headerRect = siteHeader.getBoundingClientRect();
+    siteHeader.style.setProperty("--glass-x", `${event.clientX - headerRect.left}px`);
+  });
+
+  navigationLinks.forEach((link) => {
+    link.addEventListener("pointermove", (event) => {
+      const rect = link.getBoundingClientRect();
+      link.style.setProperty("--mx", `${event.clientX - rect.left}px`);
+      link.style.setProperty("--my", `${event.clientY - rect.top}px`);
+    });
+  });
+
+  const sections = navigationLinks
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+
+  const updateActiveLink = () => {
+    const marker = window.scrollY + Math.min(window.innerHeight * 0.32, 240);
+    let activeSection = null;
+    sections.forEach((section) => {
+      if (section.offsetTop <= marker) activeSection = section;
+    });
+
+    navigationLinks.forEach((link) => {
+      const active = link.getAttribute("href") === `#${activeSection?.id}`;
+      link.classList.toggle("is-active", active);
+      if (active) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    });
+  };
+
+  updateActiveLink();
+  window.addEventListener("scroll", updateActiveLink, { passive: true });
+}
 
 function renderTimeline() {
   const pages = [];
@@ -381,6 +422,7 @@ window.addEventListener("DOMContentLoaded", () => {
   setupFilters();
   setupReveal();
   setupTheme();
+  setupLiquidNavigation();
   setupCertificatePreview();
   setupTimelineCarousel();
   setupCertificateCarousel();
