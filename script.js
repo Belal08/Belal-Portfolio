@@ -460,6 +460,8 @@ function setupDynamicText() {
 
 window.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById("preloader");
+  const loadingPercent = document.getElementById("loading-percent");
+  const signatureWordmark = document.querySelector(".signature-wordmark");
   const currentYear = document.getElementById("currentYear");
 
   if (currentYear) currentYear.textContent = new Date().getFullYear();
@@ -484,13 +486,37 @@ window.addEventListener("DOMContentLoaded", () => {
   };
 
   if (preloader) {
-    setTimeout(() => {
-      preloader.classList.add("is-leaving");
-      document.body.classList.remove("intro-pending");
-      revealPage();
-    }, 900);
+    const loadingDuration = 2200;
+    const loadingStart = performance.now();
 
-    setTimeout(() => preloader.remove(), 1500);
+    const animateSignatureLoader = (now) => {
+      const elapsed = now - loadingStart;
+      const linearProgress = Math.min(elapsed / loadingDuration, 1);
+      const percent = Math.round(linearProgress * 100);
+
+      if (loadingPercent) loadingPercent.textContent = `${percent}%`;
+      preloader.style.setProperty("--load-percent", `${percent}%`);
+      if (signatureWordmark) {
+        signatureWordmark.style.setProperty("--signature-blur", `${(18 * (1 - linearProgress)).toFixed(2)}px`);
+        signatureWordmark.style.setProperty("--signature-opacity", (0.12 + linearProgress * 0.88).toFixed(3));
+        signatureWordmark.style.setProperty("--signature-scale", (0.94 + linearProgress * 0.06).toFixed(3));
+      }
+
+      if (linearProgress < 1) {
+        requestAnimationFrame(animateSignatureLoader);
+        return;
+      }
+
+      preloader.classList.add("is-complete");
+      setTimeout(() => {
+        preloader.classList.add("is-leaving");
+        document.body.classList.remove("intro-pending");
+        revealPage();
+      }, 280);
+      setTimeout(() => preloader.remove(), 930);
+    };
+
+    requestAnimationFrame(animateSignatureLoader);
   } else {
     document.body.classList.remove("intro-pending");
     revealPage();

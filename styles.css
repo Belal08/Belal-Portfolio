@@ -2406,3 +2406,110 @@ body.dark .preloader-content {
   .certifications-carousel.is-visible .certificate-card,
   .timeline-carousel.is-visible .timeline-item { opacity:1; filter:none; transform:none; animation:none; transition:none; }
 }
+
+/* Centered legal footer */
+footer {
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width:620px) {
+  footer {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Progressive signature loader */
+#preloader {
+  --load-percent: 0%;
+  background:
+    radial-gradient(circle at 50% 46%,color-mix(in srgb,var(--teal) 10%,transparent),transparent 27rem),
+    color-mix(in srgb,var(--bg) 88%,transparent);
+}
+
+#preloader::before { content:none; }
+
+.signature-loader {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  min-width: min(560px,calc(100vw - 40px));
+  justify-items: center;
+  gap: 18px;
+}
+
+.signature-wordmark {
+  --signature-blur: 18px;
+  --signature-opacity: .12;
+  --signature-scale: .94;
+  padding: 8px 22px 4px;
+  color: var(--text);
+  font-family: Allura,"Segoe Script","Brush Script MT",cursive;
+  font-size: clamp(4rem,9vw,7.4rem);
+  font-weight: 400;
+  line-height: .9;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  opacity: var(--signature-opacity);
+  filter: blur(var(--signature-blur));
+  transform: scale(var(--signature-scale));
+  transform-origin: center;
+  text-shadow: 0 14px 35px color-mix(in srgb,var(--teal) 16%,transparent);
+  will-change: filter,opacity,transform;
+}
+
+.signature-progress {
+  display: grid;
+  width: min(270px,70vw);
+  justify-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+#loading-percent {
+  min-width: 48px;
+  color: var(--teal);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.signature-progress-track {
+  display: block;
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: color-mix(in srgb,var(--line) 78%,transparent);
+}
+
+.signature-progress-track i {
+  display: block;
+  width: var(--load-percent);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg,var(--teal),var(--gold));
+  box-shadow: 0 0 14px color-mix(in srgb,var(--teal) 38%,transparent);
+}
+
+#preloader.is-complete .signature-wordmark {
+  text-shadow: 0 10px 30px color-mix(in srgb,var(--teal) 22%,transparent);
+}
+
+#preloader.is-leaving .signature-loader {
+  opacity: 0;
+  transform: translateY(-8px) scale(1.025);
+  transition: opacity 520ms ease,transform 620ms cubic-bezier(.22,1,.36,1);
+}
+
+@media (max-width:620px) {
+  .signature-loader { min-width: calc(100vw - 28px); gap: 15px; }
+  .signature-wordmark { font-size: clamp(3.25rem,17vw,5.2rem); white-space: normal; text-align:center; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .signature-wordmark { opacity:1; filter:none; transform:none; }
+}
