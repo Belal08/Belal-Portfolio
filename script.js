@@ -193,6 +193,16 @@ function setupFilters() {
 }
 
 function setupReveal() {
+  const revealElements = [...document.querySelectorAll("[data-reveal]")];
+
+  revealElements.forEach((element) => {
+    const siblings = element.parentElement
+      ? [...element.parentElement.children].filter((child) => child.hasAttribute?.("data-reveal"))
+      : [];
+    const siblingIndex = Math.max(siblings.indexOf(element), 0);
+    element.style.setProperty("--reveal-delay", `${Math.min(siblingIndex * 90, 270)}ms`);
+  });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -200,9 +210,9 @@ function setupReveal() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.12, rootMargin: "0px 0px -7% 0px" });
 
-  document.querySelectorAll("[data-reveal]").forEach((element) => observer.observe(element));
+  revealElements.forEach((element) => observer.observe(element));
 }
 
 function setupCounters() {
@@ -450,8 +460,6 @@ function setupDynamicText() {
 
 window.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById("preloader");
-  const loadingProgress = document.querySelector(".loading-progress");
-  const loadingPercent = document.getElementById("loading-percent");
   const currentYear = document.getElementById("currentYear");
 
   if (currentYear) currentYear.textContent = new Date().getFullYear();
@@ -459,7 +467,6 @@ window.addEventListener("DOMContentLoaded", () => {
   renderTimeline();
   renderWork();
   setupFilters();
-  setupReveal();
   setupTheme();
   setupLiquidNavigation();
   setupMobileMenu();
@@ -470,29 +477,22 @@ window.addEventListener("DOMContentLoaded", () => {
   setupCanvas();
   setupDynamicText();
 
-  if (preloader && loadingProgress && loadingPercent) {
-    let progress = 0;
-
-    const counter = setInterval(() => {
-      progress += 1;
-
-      loadingProgress.style.width = `${progress}%`;
-      loadingPercent.textContent = `${progress}%`;
-
-      if (progress >= 100) {
-        clearInterval(counter);
-
-        setTimeout(() => {
-          preloader.classList.add("hide");
-          setupCounters();
-        }, 250);
-
-        setTimeout(() => {
-          preloader.remove();
-        }, 1100);
-      }
-    }, 30);
-  } else {
+  const revealPage = () => {
+    setupReveal();
+    requestAnimationFrame(() => document.body.classList.add("intro-ready"));
     setupCounters();
+  };
+
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add("is-leaving");
+      document.body.classList.remove("intro-pending");
+      revealPage();
+    }, 900);
+
+    setTimeout(() => preloader.remove(), 1500);
+  } else {
+    document.body.classList.remove("intro-pending");
+    revealPage();
   }
 });

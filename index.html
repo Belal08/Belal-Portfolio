@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css?v=borderless-metrics-12" />
+  <link rel="stylesheet" href="styles.css?v=glass-reveal-motion-13" />
 </head>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4S5L7WEL0T"></script>
@@ -21,35 +21,19 @@
   gtag('config', 'G-4S5L7WEL0T');
 </script>
 
-<body>
+<body class="intro-pending">
 
-  <!-- PRELOADER -->
-<div id="preloader">
-  <div class="meteors-bg" aria-hidden="true">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-  <div class="preloader-content">
-    <div class="preloader-logo-wrap">
+  <!-- BA GLASS REVEAL -->
+  <div id="preloader" aria-label="Loading portfolio" role="status">
+    <div class="preloader-content">
       <div class="preloader-logo">BA</div>
+      <div class="preloader-wordmark">
+        <strong>Belal Abdelhamed</strong>
+        <span>Human Resources Professional</span>
+      </div>
+      <span class="preloader-line" aria-hidden="true"></span>
     </div>
-
-    <h2 class="preloader-name">Belal Abdelhamed</h2>
-
-    <div class="loading-bar">
-      <div class="loading-progress"></div>
-    </div>
-
-    <p class="loading-text">
-      Loading Portfolio
-      <span id="loading-percent">0%</span>
-    </p>
   </div>
-</div>
   
   <canvas id="network-bg" aria-hidden="true"></canvas>
 
@@ -342,5 +326,5 @@
     <button class="certificate-lightbox-close" type="button" aria-label="Close certificate preview">×</button>
     <img src="" alt="" />
   </div>
-<script src="script.js?v=borderless-metrics-12"></script></body>
+<script src="script.js?v=glass-reveal-motion-13"></script></body>
 </html>
