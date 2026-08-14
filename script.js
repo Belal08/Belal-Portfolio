@@ -74,19 +74,6 @@ const navigationLinks = [...document.querySelectorAll(".nav-links a")];
 function setupLiquidNavigation() {
   if (!siteHeader) return;
 
-  siteHeader.addEventListener("pointermove", (event) => {
-    const headerRect = siteHeader.getBoundingClientRect();
-    siteHeader.style.setProperty("--glass-x", `${event.clientX - headerRect.left}px`);
-  });
-
-  navigationLinks.forEach((link) => {
-    link.addEventListener("pointermove", (event) => {
-      const rect = link.getBoundingClientRect();
-      link.style.setProperty("--mx", `${event.clientX - rect.left}px`);
-      link.style.setProperty("--my", `${event.clientY - rect.top}px`);
-    });
-  });
-
   const sections = navigationLinks
     .map((link) => document.querySelector(link.getAttribute("href")))
     .filter(Boolean);
