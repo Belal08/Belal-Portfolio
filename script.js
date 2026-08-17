@@ -67,7 +67,7 @@ const workItems = [
 const timeline = document.querySelector("#timeline");
 const workGrid = document.querySelector("#workGrid");
 const filters = document.querySelectorAll(".filter");
-const themeToggle = document.querySelector(".theme-toggle");
+const themeToggles = [...document.querySelectorAll(".theme-toggle")];
 const siteHeader = document.querySelector(".site-header");
 const navigationLinks = [...document.querySelectorAll(".nav-links a")];
 const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
@@ -96,13 +96,17 @@ function setupMobileMenu() {
 
   const closeMenu = () => {
     siteHeader.classList.remove("menu-open");
+    document.body.classList.remove("mobile-nav-open");
     mobileMenuToggle.setAttribute("aria-expanded", "false");
+    mobileMenuToggle.setAttribute("aria-label", "Open navigation menu");
   };
 
   mobileMenuToggle.addEventListener("click", () => {
     const opening = !siteHeader.classList.contains("menu-open");
     siteHeader.classList.toggle("menu-open", opening);
+    document.body.classList.toggle("mobile-nav-open", opening);
     mobileMenuToggle.setAttribute("aria-expanded", String(opening));
+    mobileMenuToggle.setAttribute("aria-label", opening ? "Close navigation menu" : "Open navigation menu");
   });
 
   navigationLinks.forEach((link) => link.addEventListener("click", closeMenu));
@@ -252,13 +256,15 @@ function setupTheme() {
 
   if (savedTheme === "dark") document.body.classList.add("dark");
 
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    try {
-      localStorage.setItem("belal-theme", document.body.classList.contains("dark") ? "dark" : "light");
-    } catch {
-      // Keep the theme toggle working even if storage is blocked.
-    }
+  themeToggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      try {
+        localStorage.setItem("belal-theme", document.body.classList.contains("dark") ? "dark" : "light");
+      } catch {
+        // Keep the theme toggle working even if storage is blocked.
+      }
+    });
   });
 }
 
